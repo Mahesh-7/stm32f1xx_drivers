@@ -1,5 +1,7 @@
 # stm32f1xx_drivers
 
+MCU   :   stm32f103c8
+
 OpenOCD Debugger and Semi-hosting
 ======================================
 Set the linker arguments 
