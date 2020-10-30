@@ -1,4 +1,4 @@
 "drivers/src/stm32f103xx_gpio_driver.o"
-"src/main.o"
+"src/led_toggling.o"
 "startup/startup_stm32.o"
 "startup/sysmem.o"
