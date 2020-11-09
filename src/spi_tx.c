@@ -19,31 +19,39 @@
  * PB12 --> SPI2_NSS
 
  */
+/*
+ *
+ * PA4 --> SPI1_NSS
+ * PA5 -->SPI1_SCLK
+ * PA6 ->  SPI1_MISO
+ * PA7 --> SPI1_MOSI
+
+ */
 
 void SPI2_GPIOInits(void)
 {
 	GPIO_Handle_t SPIPins;
 
-	SPIPins.pGPIOx = GPIOB;
+	SPIPins.pGPIOx = GPIOA;
 	SPIPins.GPIO_PinConfig.PinMode =GPIO_MODE_OUT_50mhz;
 	SPIPins.GPIO_PinConfig.PinType = ALTER_FUN_PP;
 
 
 	//SCLK
-	SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_13;
+	SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_5;
 	GPIO_Init(&SPIPins);
 
 	//MOSI
-	SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_15;
+	SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_7;
 	GPIO_Init(&SPIPins);
 
 	//MISO
-	//SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_14;
+	//SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_6;
 	//GPIO_Init(&SPIPins);
 
 
 	//NSS
-	//SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_12;
+	//SPIPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_4;
 	//GPIO_Init(&SPIPins);
 
 
