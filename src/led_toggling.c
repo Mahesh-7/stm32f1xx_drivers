@@ -9,7 +9,7 @@
 #include "stm32f103xx.h"
 #include <stdio.h>
 
-extern void initialise_monitor_handles(void);
+//extern void initialise_monitor_handles(void);
 
 
 void delay(void)
@@ -25,7 +25,7 @@ void delay(void)
 int main()
 {
 
-	initialise_monitor_handles(); //openocd semihosting enable only for debugging ,for normal test command this line
+	//initialise_monitor_handles(); //openocd semihosting enable only for debugging ,for normal test command this line
 
 	GPIO_Handle_t led;
 
@@ -39,7 +39,7 @@ int main()
 	while(1)
 	{
 		GPIO_ToggleOutputPin(GPIOC,GPIO_PIN_NO_13);
-		printf("led_toggling\n");
+		//printf("led_toggling\r\n");
 		delay();
 	}
 

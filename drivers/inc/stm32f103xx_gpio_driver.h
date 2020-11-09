@@ -16,7 +16,7 @@ typedef struct
 {
 	uint8_t PinNumber;
 	uint8_t PinMode;
-	uint8_t pinType;
+	uint8_t PinType;
 
 }GPIO_PinConfig_t;
 

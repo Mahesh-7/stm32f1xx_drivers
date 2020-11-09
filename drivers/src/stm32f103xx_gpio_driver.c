@@ -91,7 +91,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 
 
 		//2. configure the gpio type
-		temp = (pGPIOHandle->GPIO_PinConfig.pinType << ( 4 * pGPIOHandle->GPIO_PinConfig.PinNumber) );
+		temp = (pGPIOHandle->GPIO_PinConfig.PinType << ( 4 * pGPIOHandle->GPIO_PinConfig.PinNumber) );
 		pGPIOHandle->pGPIOx->CRL &= ~( 0x3 <<( ( 4 *( pGPIOHandle->GPIO_PinConfig.PinNumber%8))+2)); //clearing
 		pGPIOHandle->pGPIOx->CRL |= temp;
 	}
@@ -106,7 +106,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 
 
 		//2. configure the gpio type
-		temp = (pGPIOHandle->GPIO_PinConfig.pinType << ( 4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8)) );
+		temp = (pGPIOHandle->GPIO_PinConfig.PinType << ( 4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8)) );
 		pGPIOHandle->pGPIOx->CRH &= ~( 0x3 << (( 4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8))+2)); //clearing
 		pGPIOHandle->pGPIOx->CRH |= temp;
 	}

@@ -28,13 +28,13 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: stm32f1xx_drivers.elf
+all: stm32f1x_drivers.elf
 
 # Tool invocations
-stm32f1xx_drivers.elf: $(OBJS) $(USER_OBJS) C:\Users\user.user-PC\Desktop\cubemx_code\ecllipse\stm32f1xx_drivers/LinkerScript.ld
+stm32f1x_drivers.elf: $(OBJS) $(USER_OBJS) C:\Users\user.user-PC\Desktop\cubemx_code\ecllipse\stm32f1x_drivers/LinkerScript.ld
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU GCC Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=rdimon.specs -lc -lrdimon -T"C:/Users/user.user-PC/Desktop/cubemx_code/ecllipse/stm32f1xx_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f1xx_drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=rdimon.specs -lc -lrdimon -T"C:/Users/user.user-PC/Desktop/cubemx_code/ecllipse/stm32f1x_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f1x_drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
@@ -46,8 +46,8 @@ clean:
 
 post-build:
 	-@echo 'Generating binary and Printing size information:'
-	arm-none-eabi-objcopy -O binary "stm32f1xx_drivers.elf" "stm32f1xx_drivers.bin"
-	arm-none-eabi-size "stm32f1xx_drivers.elf"
+	arm-none-eabi-objcopy -O binary "stm32f1x_drivers.elf" "stm32f1x_drivers.bin"
+	arm-none-eabi-size "stm32f1x_drivers.elf"
 	-@echo ' '
 
 .PHONY: all clean dependents

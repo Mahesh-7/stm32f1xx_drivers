@@ -33,10 +33,10 @@
 #define AHBPERIPH_BASEADDR			(PERIPH_BASEADDR+0X18000U)			/*BASE ADDRESS OF AHB PERIPHERAL  */
 
 /*
- *  GPIOx base address
+ *  RCC,GPIOx,SPI base address
  */
 
-
+#define RCC_BASEADDR			(PERIPH_BASEADDR+0X21000U)					/*BASE ADDRESS OF RCC */
 #define GPIOA_BASEADDR			(APB2PERIPH_BASEADDR+0X0800U)				/*BASE ADDRESS OF GPIOA */
 #define GPIOB_BASEADDR			(APB2PERIPH_BASEADDR+0X0C00U)				/*BASE ADDRESS OF GPIOB */
 #define GPIOC_BASEADDR			(APB2PERIPH_BASEADDR+0X1000U)				/*BASE ADDRESS OF GPIOC */
@@ -44,24 +44,11 @@
 #define GPIOE_BASEADDR			(APB2PERIPH_BASEADDR+0X1800U)				/*BASE ADDRESS OF GPIOE */
 #define GPIOF_BASEADDR			(APB2PERIPH_BASEADDR+0X1C00U)				/*BASE ADDRESS OF GPIOF */
 #define GPIOG_BASEADDR			(APB2PERIPH_BASEADDR+0X2000U)				/*BASE ADDRESS OF GPIOG */
-#define RCC_BASEADDR			(PERIPH_BASEADDR+0X21000U)					/*BASE ADDRESS OF RCC */
-/*
- * peripheral reg definition structure for gpio
- */
-
-typedef struct
-{
-
-	__vo uint32_t CRL;        /* 	 Port configuration register low				address offset:0x00 */
-	__vo uint32_t CRH;		 /* 	 Port configuration register high 				address offset:0x04 */
-	__vo uint32_t IDR;		 /* 	 Port input data register 						address offset:0x08 */
-	__vo uint32_t ODR;		 /* 	 Port output data register 						address offset:0x0c */
-
-}GPIO_RegDef_t;
+#define SPI_BASEADDR			(APB2PERIPH_BASEADDR+0X3000U)				/*BASE ADDRESS OF SPI */
 
 
 /*
- * peripheral clk definition structure for RCC
+ * peripheral reg definition structure for RCC CLK Configuration
  */
 
 typedef struct
@@ -83,16 +70,56 @@ typedef struct
 }RCC_RegDef_t;
 
 
+
+/*
+ * peripheral reg definition structure for gpio
+ */
+
+typedef struct
+{
+
+	__vo uint32_t CRL;        /* 	 Port configuration register low				address offset:0x00 */
+	__vo uint32_t CRH;		 /* 	 Port configuration register high 				address offset:0x04 */
+	__vo uint32_t IDR;		 /* 	 Port input data register 						address offset:0x08 */
+	__vo uint32_t ODR;		 /* 	 Port output data register 						address offset:0x0c */
+
+}GPIO_RegDef_t;
+
+
+
+
+/*
+ * peripheral reg definition structure for SPI
+ */
+
+typedef struct
+{
+
+	__vo uint32_t CR1;       	 /* 	 SPI control register 1							address offset:0x00 */
+	__vo uint32_t CR2;			 /* 	 SPI control register 2  						address offset:0x04 */
+	__vo uint32_t SR;		 	 /* 	 SPI status register  							address offset:0x08 */
+	__vo uint32_t DR;			 /* 	 SPI data register  							address offset:0x0c */
+	__vo uint32_t CRCPR;		 /* 	 SPI CRC polynomial register					address offset:0x10 */
+	__vo uint32_t RXCRCR;		 /* 	 SPI RX CRC register 							address offset:0x14 */
+	__vo uint32_t TXCRCR;		 /* 	 SPI TX CRC register  							address offset:0x18 */
+	__vo uint32_t I2SCFGR;		 /* 	 SPI_I2S configuration register					address offset:0x1c */
+	__vo uint32_t I2SPR;		 /* 	 SPI_I2S prescaler register 					address offset:0x20 */
+
+}SPI_RegDef_t;
+
+
+
+
 /*
  * peripheral definition macros
  */
 
+#define RCC 				((RCC_RegDef_t*)RCC_BASEADDR)						/* macro def for rcc peripheral addr */
 #define GPIOA				((GPIO_RegDef_t*)GPIOA_BASEADDR)					/* macro def for gpioa peripheral addr */
 #define GPIOB				((GPIO_RegDef_t*)GPIOB_BASEADDR)					/* macro def for gpiob peripheral addr */
 #define GPIOC				((GPIO_RegDef_t*)GPIOC_BASEADDR)					/* macro def for gpioc peripheral addr */
 #define GPIOD				((GPIO_RegDef_t*)GPIOD_BASEADDR)					/* macro def for gpiod peripheral addr */
-#define RCC 				((RCC_RegDef_t*)RCC_BASEADDR)						/* macro def for rcc peripheral addr */
-
+#define SPI 				((SPI_RegDef_t*)SPI_BASEADDR)						/* macro def for SPI peripheral addr */
 
 
 
@@ -117,6 +144,57 @@ typedef struct
 #define GPIOC_PCLK_EN()		(RCC->APB2ENR |= (1<<4))
 #define GPIOD_PCLK_EN()		(RCC->APB2ENR |= (1<<5))
 
+/*
+ * Clock Enable Macros for SPIx peripheralsbu
+ */
+#define SPI1_PCLK_EN() (RCC->APB2ENR |= (1 << 12))
+
+
+/******************************************************************************************
+ *Bit position definitions of SPI peripheral
+ ******************************************************************************************/
+/*
+ * Bit position definitions SPI_CR1
+ */
+#define SPI_CR1_CPHA     				 0
+#define SPI_CR1_CPOL      				 1
+#define SPI_CR1_MSTR     				 2
+#define SPI_CR1_BR   					 3
+#define SPI_CR1_SPE     				 6
+#define SPI_CR1_LSBFIRST   			 	 7
+#define SPI_CR1_SSI     				 8
+#define SPI_CR1_SSM      				 9
+#define SPI_CR1_RXONLY      		 	10
+#define SPI_CR1_DFF     			 	11
+#define SPI_CR1_CRCNEXT   			 	12
+#define SPI_CR1_CRCEN   			 	13
+#define SPI_CR1_BIDIOE     			 	14
+#define SPI_CR1_BIDIMODE      			15
+
+/*
+ * Bit position definitions SPI_CR2
+ */
+#define SPI_CR2_RXDMAEN		 			0
+#define SPI_CR2_TXDMAEN				 	1
+#define SPI_CR2_SSOE				 	2
+#define SPI_CR2_FRF						4
+#define SPI_CR2_ERRIE					5
+#define SPI_CR2_RXNEIE				 	6
+#define SPI_CR2_TXEIE					7
+
+
+/*
+ * Bit position definitions SPI_SR
+ */
+#define SPI_SR_RXNE						0
+#define SPI_SR_TXE				 		1
+#define SPI_SR_CHSIDE				 	2
+#define SPI_SR_UDR					 	3
+#define SPI_SR_CRCERR				 	4
+#define SPI_SR_MODF					 	5
+#define SPI_SR_OVR					 	6
+#define SPI_SR_BSY					 	7
+#define SPI_SR_FRE					 	8
 
 
 //some generic macros
@@ -132,5 +210,6 @@ typedef struct
 
 
 #include "stm32f103xx_gpio_driver.h"
+#include "stm32f103xx_spi_driver.h"
 
 #endif /* INC_STM32F103XX_H_ */

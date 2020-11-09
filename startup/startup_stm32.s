@@ -3,7 +3,7 @@
   * @file      startup_stm32.s dedicated to STM32F103C8Tx device
   * @author    Ac6
   * @version   V1.0.0
-  * @date      2020-10-19
+  * @date      2020-10-31
   ******************************************************************************
   */
 
