@@ -46,7 +46,7 @@
 #define GPIOG_BASEADDR			(APB2PERIPH_BASEADDR+0X2000U)				/*BASE ADDRESS OF GPIOG */
 #define SPI_BASEADDR			(APB2PERIPH_BASEADDR+0X3000U)				/*BASE ADDRESS OF SPI */
 
-
+//spi 0x4001 3000
 /*
  * peripheral reg definition structure for RCC CLK Configuration
  */
@@ -177,7 +177,6 @@ typedef struct
 #define SPI_CR2_RXDMAEN		 			0
 #define SPI_CR2_TXDMAEN				 	1
 #define SPI_CR2_SSOE				 	2
-#define SPI_CR2_FRF						4
 #define SPI_CR2_ERRIE					5
 #define SPI_CR2_RXNEIE				 	6
 #define SPI_CR2_TXEIE					7
@@ -194,7 +193,7 @@ typedef struct
 #define SPI_SR_MODF					 	5
 #define SPI_SR_OVR					 	6
 #define SPI_SR_BSY					 	7
-#define SPI_SR_FRE					 	8
+
 
 
 //some generic macros

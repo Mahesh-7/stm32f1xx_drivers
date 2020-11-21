@@ -28,7 +28,7 @@
 
  */
 
-void SPI2_GPIOInits(void)
+void SPI1_GPIOInits(void)
 {
 	GPIO_Handle_t SPIPins;
 
@@ -57,21 +57,21 @@ void SPI2_GPIOInits(void)
 
 }
 
-void SPI2_Inits(void)
+void SPI1_Inits(void)
 {
 
-	SPI_Handle_t SPI2handle;
+	SPI_Handle_t SPI1handle;
 
-	SPI2handle.pSPIx = SPI;
-	SPI2handle.SPIConfig.SPI_BusConfig = SPI_BUS_CONFIG_FD;
-	SPI2handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
-	SPI2handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV8;//generates sclk of 1MHz
-	SPI2handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
-	SPI2handle.SPIConfig.SPI_CPOL = SPI_CPOL_LOW;
-	SPI2handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
-	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_EN; //software slave management enabled for NSS pin
+	SPI1handle.pSPIx = SPI;
+	SPI1handle.SPIConfig.SPI_BusConfig = SPI_BUS_CONFIG_FD;
+	SPI1handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
+	SPI1handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV8;//generates sclk of 1MHz
+	SPI1handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
+	SPI1handle.SPIConfig.SPI_CPOL = SPI_CPOL_LOW;
+	SPI1handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
+	SPI1handle.SPIConfig.SPI_SSM = SPI_SSM_EN; //software slave management enabled for NSS pin
 
-	SPI_Init(&SPI2handle);
+	SPI_Init(&SPI1handle);
 }
 
 int main(void)
@@ -81,10 +81,10 @@ int main(void)
 	char user_data[] = "Hello world";
 
 	//this function is used to initialize the GPIO pins to behave as SPI2 pins
-	SPI2_GPIOInits();
+	SPI1_GPIOInits();
 
 	//This function is used to initialize the SPI2 peripheral parameters
-	SPI2_Inits();
+	SPI1_Inits();
 
 	//this makes NSS signal internally high and avoids MODF error
 	SPI_SSIConfig(SPI,ENABLE);
@@ -96,10 +96,10 @@ int main(void)
 	SPI_SendData(SPI,(uint8_t*)user_data,strlen(user_data));
 
 	//lets confirm SPI is not busy
-	while( SPI_GetFlagStatus(SPI,SPI_BUSY_FLAG) );
+	//while( SPI_GetFlagStatus(SPI,SPI_BUSY_FLAG) );
 
 	//Disable the SPI2 peripheral
-	SPI_PeripheralControl(SPI,DISABLE);
+	//SPI_PeripheralControl(SPI,DISABLE);
 
 	while(1);
 

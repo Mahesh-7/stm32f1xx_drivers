@@ -86,13 +86,13 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 		//1 . configure the mode of gpio mode
 
 		temp = (pGPIOHandle->GPIO_PinConfig.PinMode << (4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8) ) );
-		pGPIOHandle->pGPIOx->CRL &= ~( 0x3 << (4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8))); //clearing
+		pGPIOHandle->pGPIOx->CRL &= ~( 0x3 << (4 * pGPIOHandle->GPIO_PinConfig.PinNumber)); //clearing
 		pGPIOHandle->pGPIOx->CRL |= temp; //setting
 
 
 		//2. configure the gpio type
-		temp = (pGPIOHandle->GPIO_PinConfig.PinType << ( 4 * pGPIOHandle->GPIO_PinConfig.PinNumber) );
-		pGPIOHandle->pGPIOx->CRL &= ~( 0x3 <<( ( 4 *( pGPIOHandle->GPIO_PinConfig.PinNumber%8))+2)); //clearing
+		temp = (pGPIOHandle->GPIO_PinConfig.PinType << ( 4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8)) );
+		pGPIOHandle->pGPIOx->CRL &= ~( 0x3 << (( 4 * (pGPIOHandle->GPIO_PinConfig.PinNumber%8))+2)); //clearing
 		pGPIOHandle->pGPIOx->CRL |= temp;
 	}
 
