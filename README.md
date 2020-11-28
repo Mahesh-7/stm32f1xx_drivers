@@ -2,6 +2,8 @@
 
 MCU   :   stm32f103c8
 
+resource : Drivers and Freertos ported in MCU
+
 OpenOCD Debugger and Semi-hosting
 ======================================
 Set the linker arguments 
