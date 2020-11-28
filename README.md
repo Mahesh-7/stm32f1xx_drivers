@@ -1,4 +1,4 @@
-# stm32f1xx_drivers
+# stm32f1xx_drivers implemented using eclipse based stm32 ac6-system workbench 
 
 MCU   :   stm32f103c8
 
