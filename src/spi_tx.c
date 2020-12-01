@@ -62,7 +62,7 @@ void SPI1_Inits(void)
 
 	SPI_Handle_t SPI1handle;
 
-	SPI1handle.pSPIx = SPI;
+	SPI1handle.pSPIx = SPI1;
 	SPI1handle.SPIConfig.SPI_BusConfig = SPI_BUS_CONFIG_FD;
 	SPI1handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
 	SPI1handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV8;//generates sclk of 1MHz
@@ -87,19 +87,19 @@ int main(void)
 	SPI1_Inits();
 
 	//this makes NSS signal internally high and avoids MODF error
-	SPI_SSIConfig(SPI,ENABLE);
+	SPI_SSIConfig(SPI1,ENABLE);
 
 	//enable the SPI peripheral
-	SPI_PeripheralControl(SPI,ENABLE);
+	SPI_PeripheralControl(SPI1,ENABLE);
 
 	//to send data
-	SPI_SendData(SPI,(uint8_t*)user_data,strlen(user_data));
+	SPI_SendData(SPI1,(uint8_t*)user_data,strlen(user_data));
 
 	//lets confirm SPI is not busy
-	while( SPI_GetFlagStatus(SPI,SPI_BUSY_FLAG) );
+	while( SPI_GetFlagStatus(SPI1,SPI_BUSY_FLAG) );
 
 	//Disable the SPI2 peripheral
-	SPI_PeripheralControl(SPI,DISABLE);
+	SPI_PeripheralControl(SPI1,DISABLE);
 
 	while(1);
 

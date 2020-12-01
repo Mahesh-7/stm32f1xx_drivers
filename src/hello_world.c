@@ -23,7 +23,7 @@
 
 
 
-//extern void initialise_monitor_handles(void);
+extern void initialise_monitor_handles(void);
 
 TaskHandle_t xTaskHandle1=0;
 TaskHandle_t xTaskHandle2=0;
@@ -44,7 +44,7 @@ void delay(void)
 int main()
 {
 
-	//initialise_monitor_handles(); //openocd semihosting enable only for debugging ,for normal test command this line
+	initialise_monitor_handles(); //openocd semihosting enable only for debugging ,for normal test command this line
 
 	xTaskCreate(vTask1_Handler,"task1",configMINIMAL_STACK_SIZE,0,2,&xTaskHandle1);
 
@@ -59,11 +59,13 @@ int main()
 
 void vTask1_Handler(void * param)
 {
-	while(1);
+	//while(1);
+	printf("task1 running\n");
 }
 
 void vTask2_Handler(void * param)
 {
-	while(1);
+	//while(1);
+	printf("task2 running\n");
 }
 

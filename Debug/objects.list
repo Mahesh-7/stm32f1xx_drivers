@@ -1,5 +1,7 @@
 "drivers/src/stm32f103xx_gpio_driver.o"
+"drivers/src/stm32f103xx_i2c_driver.o"
 "drivers/src/stm32f103xx_spi_driver.o"
-"src/spi_tx.o"
+"drivers/src/stm32f103xx_uart_driver.o"
+"src/i2c_master_tx.o"
 "startup/startup_stm32.o"
 "startup/sysmem.o"

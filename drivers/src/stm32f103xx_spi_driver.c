@@ -42,7 +42,7 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
 
 	if(EnorDi == ENABLE)
 	{
-		if(pSPIx == SPI)
+		if(pSPIx == SPI1)
 		{
 			SPI1_PCLK_EN();
 		}
