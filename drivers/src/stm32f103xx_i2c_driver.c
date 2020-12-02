@@ -23,25 +23,24 @@ static int RCC_GetPCLK1Value()
 
 static void I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx)
 {
-//	pI2Cx->CR1 |= ( 1 << I2C_CR1_START);
-	//I2C1->CR1 |= (1<<8);
-	pI2Cx->CR1 |= ( 1 << 8);
+	pI2Cx->CR1 |= ( 1 << I2C_CR1_START);
+
 }
 
 
 
 static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 {
-	SlaveAddr = SlaveAddr << 1;
-	SlaveAddr &= ~(1); //SlaveAddr is Slave address + r/nw bit=0
+	//SlaveAddr = SlaveAddr << 1;
+	//SlaveAddr &= ~(1); //SlaveAddr is Slave address + r/nw bit=0
 	pI2Cx->DR = SlaveAddr;
 }
 
 
 static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 {
-	SlaveAddr = SlaveAddr << 1;
-	SlaveAddr |= 1; //SlaveAddr is Slave address + r/nw bit=1
+	//SlaveAddr = SlaveAddr << 1;
+	//SlaveAddr |= 1; //SlaveAddr is Slave address + r/nw bit=1
 	pI2Cx->DR = SlaveAddr;
 }
 
@@ -195,7 +194,10 @@ void I2C_Init(I2C_Handle_t *pI2CHandle)
 	uint32_t tempreg = 0 ;
 
 	//enable the clock for the i2cx peripheral
-	I2C_PeriClockControl(pI2CHandle->pI2Cx,ENABLE);
+	// I2C_PeriClockControl(pI2CHandle->pI2Cx,ENABLE);
+
+	pI2CHandle->pI2Cx->CR1 &=0x0000;
+	pI2CHandle->pI2Cx->CR2 &=0x0000;
 
 	//ack control bit
 	tempreg |= pI2CHandle->I2C_Config.I2C_AckControl << 10;
@@ -288,53 +290,27 @@ uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName)
 
 void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
-	unsigned int dummy_read=0x00000000;
 
 #if 1
 	// 1. Generate the START condition
 	I2C_GenerateStartCondition(pI2CHandle->pI2Cx);
 
-	//1.i2c start
-		//I2C1->CR1 |= (1<<8);
-
-
-
-
-
 	//2. confirm that start generation is completed by checking the SB flag in the SR1
 	//   Note: Until SB is cleared SCL will be stretched (pulled to LOW)
-	//while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
-
-		while( ! (I2C1->SR1 & (1<<0)));
-		dummy_read=I2C1->SR1;
-		(void)dummy_read;
+	while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
 
 
 	//3. Send the address of the slave with r/nw bit set to w(0) (total 8 bits )
-	//I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
-
-
-		//2.i2c slave address+write
-		I2C1->DR = SlaveAddr;//delay();
+	I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
 
 
 	//4. Confirm that address phase is completed by checking the ADDR flag in teh SR1
-	//while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_ADDR) );
-
-
+	while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_ADDR) );
 
 
 	//5. clear the ADDR flag according to its software sequence
 	//   Note: Until ADDR is cleared SCL will be stretched (pulled to LOW)
-	//I2C_ClearADDRFlag(pI2CHandle);
-
-		//2.a) check addr clear
-		while( ! (I2C1->SR1 & (1<<1)));
-		dummy_read=I2C1->SR1;
-		dummy_read=I2C1->SR2;
-		(void)dummy_read;
-
-
+	I2C_ClearADDRFlag(pI2CHandle);
 
 	//6. send the data until len becomes 0
 
@@ -346,78 +322,21 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Le
 			Len--;
 		}
 
-
-
 	//7. when Len becomes zero wait for TXE=1 and BTF=1 before generating the STOP condition
 	//   Note: TXE=1 , BTF=1 , means that both SR and DR are empty and next transmission should begin
 	//   when BTF=1 SCL will be stretched (pulled to LOW)
 
+	while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_TXE) );
 
-
-	//while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_TXE) );
-
-	//while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_BTF) );
-
-
-
+	while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_BTF) );
 
 	//8. Generate STOP condition and master need not to wait for the completion of stop condition.
 	//   Note: generating STOP, automatically clears the BTF
 	//if(Sr == I2C_DISABLE_SR )
-	//I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
-
-
-
-		//before stop check txe and btf are set
-		while( ! (I2C1->SR1 & (1<<7)));
-		while( ! (I2C1->SR1 & (1<<2)));
-
-		//4.i2c stop
-		I2C1->CR1 |= (1<<9);
+	I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
 
 #endif
 
-#if 0
-
-
-		//1.i2c start
-			I2C1->CR1 |= (1<<8);
-
-			while( ! (I2C1->SR1 & (1<<0)));
-			dummy_read=I2C1->SR1;
-			(void)dummy_read;
-
-
-
-			//2.i2c slave address+write
-			I2C1->DR = SlaveAddr;//delay();
-
-
-			//2.a) check addr clear
-			while( ! (I2C1->SR1 & (1<<1)));
-			dummy_read=I2C1->SR1;
-			dummy_read=I2C1->SR2;
-			(void)dummy_read;
-
-
-
-			//3. before i2c master write check txe empty
-			while(Len>0)
-			{
-				while( ! (I2C1->SR1 & (1<<7)));
-				I2C1->DR = *pTxbuffer++; //delay();
-				Len--;
-			}
-
-
-
-			//before stop check txe and btf are set
-			while( ! (I2C1->SR1 & (1<<7)));
-			while( ! (I2C1->SR1 & (1<<2)));
-
-			//4.i2c stop
-			I2C1->CR1 |= (1<<9);
-#endif
 
 }
 

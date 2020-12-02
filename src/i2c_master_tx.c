@@ -42,6 +42,13 @@ uint8_t some_data[] = "We are testing I2C master Tx\n";
 
 void I2C1_GPIOInits(void)
 {
+
+
+#if 1
+
+	GPIO_PeriClockControl(GPIOB, ENABLE);//portb clk enable
+	I2C_PeriClockControl(I2C1,ENABLE); //i2c clk enable
+
 	GPIO_Handle_t I2CPins;
 
 	I2CPins.pGPIOx = GPIOB;
@@ -56,6 +63,10 @@ void I2C1_GPIOInits(void)
 	//sda
 	I2CPins.GPIO_PinConfig.PinNumber = GPIO_PIN_NO_7;
 	GPIO_Init(&I2CPins);
+
+
+
+#endif
 
 
 }
@@ -98,65 +109,19 @@ void GPIO_ButtonInit(void)
 }
 
 
-void i2c_gpio_init(void)
-{
-	//i2c and port clk enable
-	RCC->APB1ENR &= 0x00000000;
-	RCC->APB2ENR &= 0x00000000;
-
-	RCC->APB1ENR |= (1<<21); //enable i2c clk
-	RCC->APB2ENR |= (1<<3);  //enable portb clk
-	//RCC->APB2ENR |=(1<<0);  //alternate function clk enable
-
-	GPIOB->CRL &=0x00000000;
-
-	//scl
-	GPIOB->CRL |= (3<<24);  //pb6-output
-	GPIOB->CRL |= (3<<26);  //pb6-alterante open drain
-
-	//sda
-	GPIOB->CRL |= (3<<28);  //pb7-output
-	GPIOB->CRL |= (3<<30);  //pb7-alterante open drain
-
-}
-
-
-
-void i2c_init(void)
-{
-	//i2c master mode
-	I2C1->CR1 &=0x0000;
-	I2C1->CR2 &=0x0000;
-
-	I2C1->CR1 |= (1<<10);  //ack enable
-
-	I2C1->CR2 |= 8<<0;  //freq :8mhz
-
-	I2C1->CCR =0x28;  //100khz
-
-	I2C1->TRISE &=0x0000;
-	I2C1->TRISE |=9;  //scal rise time config
-
-	I2C1->CR1 |= (1<<0); //i2c peripheral enable
-}
-
 int main(void)
 {
-
-	i2c_gpio_init();
 
 	//GPIO_ButtonInit();
 
 	//i2c pin inits
-	//I2C1_GPIOInits();
+	I2C1_GPIOInits();
 
 	//i2c peripheral configuration
-	//I2C1_Inits();
-
-	i2c_init();
+	I2C1_Inits();
 
 	//enable the i2c peripheral
-	//I2C_PeripheralControl(I2C1,ENABLE);
+	I2C_PeripheralControl(I2C1,ENABLE);
 
 	I2C_MasterSendData(&I2C1Handle,some_data,strlen((char*)some_data),SLAVE_ADDR,I2C_ENABLE_SR);
 

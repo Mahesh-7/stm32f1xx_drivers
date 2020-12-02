@@ -247,10 +247,6 @@ Discarded input sections
  .text          0x00000000        0x0 drivers/src/stm32f103xx_gpio_driver.o
  .data          0x00000000        0x0 drivers/src/stm32f103xx_gpio_driver.o
  .bss           0x00000000        0x0 drivers/src/stm32f103xx_gpio_driver.o
- .text.GPIO_PeriClockControl
-                0x00000000       0x88 drivers/src/stm32f103xx_gpio_driver.o
- .text.GPIO_Init
-                0x00000000      0x14a drivers/src/stm32f103xx_gpio_driver.o
  .text.GPIO_DeInit
                 0x00000000       0x12 drivers/src/stm32f103xx_gpio_driver.o
  .text.GPIO_ReadFromInputPin
@@ -263,30 +259,6 @@ Discarded input sections
                 0x00000000       0x1c drivers/src/stm32f103xx_gpio_driver.o
  .text.GPIO_ToggleOutputPin
                 0x00000000       0x28 drivers/src/stm32f103xx_gpio_driver.o
- .debug_info    0x00000000      0x3b0 drivers/src/stm32f103xx_gpio_driver.o
- .debug_abbrev  0x00000000       0xfb drivers/src/stm32f103xx_gpio_driver.o
- .debug_aranges
-                0x00000000       0x58 drivers/src/stm32f103xx_gpio_driver.o
- .debug_ranges  0x00000000       0x48 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0xae drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000      0xa60 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0x22 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0x8e drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0x51 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0xef drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0x6a drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000      0x1df drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000      0x454 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0xbe drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0xd6 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000      0x109 drivers/src/stm32f103xx_gpio_driver.o
- .debug_macro   0x00000000       0xac drivers/src/stm32f103xx_gpio_driver.o
- .debug_line    0x00000000      0x45e drivers/src/stm32f103xx_gpio_driver.o
- .debug_str     0x00000000     0x57fb drivers/src/stm32f103xx_gpio_driver.o
- .comment       0x00000000       0x80 drivers/src/stm32f103xx_gpio_driver.o
- .debug_frame   0x00000000      0x14c drivers/src/stm32f103xx_gpio_driver.o
- .ARM.attributes
-                0x00000000       0x33 drivers/src/stm32f103xx_gpio_driver.o
  .group         0x00000000        0xc drivers/src/stm32f103xx_i2c_driver.o
  .group         0x00000000        0xc drivers/src/stm32f103xx_i2c_driver.o
  .group         0x00000000        0xc drivers/src/stm32f103xx_i2c_driver.o
@@ -302,26 +274,14 @@ Discarded input sections
  .text          0x00000000        0x0 drivers/src/stm32f103xx_i2c_driver.o
  .data          0x00000000        0x0 drivers/src/stm32f103xx_i2c_driver.o
  .bss           0x00000000        0x0 drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_ExecuteAddressPhaseWrite
-                0x00000000       0x2a drivers/src/stm32f103xx_i2c_driver.o
  .text.I2C_ExecuteAddressPhaseRead
-                0x00000000       0x2a drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_ClearADDRFlag
-                0x00000000       0x6e drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_GenerateStopCondition
-                0x00000000       0x1e drivers/src/stm32f103xx_i2c_driver.o
+                0x00000000       0x1c drivers/src/stm32f103xx_i2c_driver.o
  .text.I2C_SlaveEnableDisableCallbackEvents
                 0x00000000       0x66 drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_PeripheralControl
-                0x00000000       0x36 drivers/src/stm32f103xx_i2c_driver.o
  .text.I2C_DeInit
                 0x00000000       0x12 drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_GetFlagStatus
-                0x00000000       0x26 drivers/src/stm32f103xx_i2c_driver.o
  .text.I2C_MasterReceiveData
                 0x00000000      0x124 drivers/src/stm32f103xx_i2c_driver.o
- .text.I2C_ManageAcking
-                0x00000000       0x36 drivers/src/stm32f103xx_i2c_driver.o
  .debug_macro   0x00000000      0xa60 drivers/src/stm32f103xx_i2c_driver.o
  .debug_macro   0x00000000       0x22 drivers/src/stm32f103xx_i2c_driver.o
  .debug_macro   0x00000000       0x8e drivers/src/stm32f103xx_i2c_driver.o
@@ -495,12 +455,8 @@ Discarded input sections
  .bss           0x00000000        0x0 src/i2c_master_tx.o
  .text.delay    0x00000000       0x28 src/i2c_master_tx.o
  .text.delay1   0x00000000       0x36 src/i2c_master_tx.o
- .text.I2C1_GPIOInits
-                0x00000000       0x38 src/i2c_master_tx.o
  .text.GPIO_ButtonInit
                 0x00000000        0xc src/i2c_master_tx.o
- .text.i2c_init
-                0x00000000       0x64 src/i2c_master_tx.o
  .debug_macro   0x00000000      0xa60 src/i2c_master_tx.o
  .debug_macro   0x00000000       0x22 src/i2c_master_tx.o
  .debug_macro   0x00000000       0x8e src/i2c_master_tx.o
@@ -824,7 +780,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x08000000                g_pfnVectors
                 0x08000130                . = ALIGN (0x4)
 
-.text           0x08000130      0x5f4
+.text           0x08000130      0x8f4
                 0x08000130                . = ALIGN (0x4)
  *(.text)
  .text          0x08000130       0x40 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -848,184 +804,207 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
  .text.__register_exitproc
                 0x08000214       0xc0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__atexit.o)
                 0x08000214                __register_exitproc
+ .text.GPIO_PeriClockControl
+                0x080002d4       0x88 drivers/src/stm32f103xx_gpio_driver.o
+                0x080002d4                GPIO_PeriClockControl
+ .text.GPIO_Init
+                0x0800035c      0x140 drivers/src/stm32f103xx_gpio_driver.o
+                0x0800035c                GPIO_Init
  .text.RCC_GetPCLK1Value
-                0x080002d4       0x14 drivers/src/stm32f103xx_i2c_driver.o
+                0x0800049c       0x14 drivers/src/stm32f103xx_i2c_driver.o
  .text.I2C_GenerateStartCondition
-                0x080002e8       0x1e drivers/src/stm32f103xx_i2c_driver.o
- *fill*         0x08000306        0x2 
+                0x080004b0       0x1e drivers/src/stm32f103xx_i2c_driver.o
+ .text.I2C_ExecuteAddressPhaseWrite
+                0x080004ce       0x1c drivers/src/stm32f103xx_i2c_driver.o
+ .text.I2C_ClearADDRFlag
+                0x080004ea       0x6e drivers/src/stm32f103xx_i2c_driver.o
+ .text.I2C_GenerateStopCondition
+                0x08000558       0x1e drivers/src/stm32f103xx_i2c_driver.o
+                0x08000558                I2C_GenerateStopCondition
+ .text.I2C_PeripheralControl
+                0x08000576       0x36 drivers/src/stm32f103xx_i2c_driver.o
+                0x08000576                I2C_PeripheralControl
  .text.I2C_PeriClockControl
-                0x08000308       0x54 drivers/src/stm32f103xx_i2c_driver.o
-                0x08000308                I2C_PeriClockControl
+                0x080005ac       0x54 drivers/src/stm32f103xx_i2c_driver.o
+                0x080005ac                I2C_PeriClockControl
  .text.I2C_Init
-                0x0800035c      0x170 drivers/src/stm32f103xx_i2c_driver.o
-                0x0800035c                I2C_Init
+                0x08000600      0x180 drivers/src/stm32f103xx_i2c_driver.o
+                0x08000600                I2C_Init
+ .text.I2C_GetFlagStatus
+                0x08000780       0x26 drivers/src/stm32f103xx_i2c_driver.o
+                0x08000780                I2C_GetFlagStatus
+ *fill*         0x080007a6        0x2 
  .text.I2C_MasterSendData
-                0x080004cc       0xac drivers/src/stm32f103xx_i2c_driver.o
-                0x080004cc                I2C_MasterSendData
+                0x080007a8       0xbc drivers/src/stm32f103xx_i2c_driver.o
+                0x080007a8                I2C_MasterSendData
+ .text.I2C_ManageAcking
+                0x08000864       0x36 drivers/src/stm32f103xx_i2c_driver.o
+                0x08000864                I2C_ManageAcking
+ *fill*         0x0800089a        0x2 
+ .text.I2C1_GPIOInits
+                0x0800089c       0x4c src/i2c_master_tx.o
+                0x0800089c                I2C1_GPIOInits
  .text.I2C1_Inits
-                0x08000578       0x38 src/i2c_master_tx.o
-                0x08000578                I2C1_Inits
- .text.i2c_gpio_init
-                0x080005b0       0x7c src/i2c_master_tx.o
-                0x080005b0                i2c_gpio_init
- .text.main     0x0800062c       0x30 src/i2c_master_tx.o
-                0x0800062c                main
+                0x080008e8       0x38 src/i2c_master_tx.o
+                0x080008e8                I2C1_Inits
+ .text.main     0x08000920       0x3c src/i2c_master_tx.o
+                0x08000920                main
  .text.Reset_Handler
-                0x0800065c       0x50 startup/startup_stm32.o
-                0x0800065c                Reset_Handler
+                0x0800095c       0x50 startup/startup_stm32.o
+                0x0800095c                Reset_Handler
  .text.Default_Handler
-                0x080006ac        0x2 startup/startup_stm32.o
-                0x080006ac                EXTI2_IRQHandler
-                0x080006ac                TIM8_TRG_COM_IRQHandler
-                0x080006ac                TIM8_CC_IRQHandler
-                0x080006ac                DebugMon_Handler
-                0x080006ac                TIM1_CC_IRQHandler
-                0x080006ac                HardFault_Handler
-                0x080006ac                TIM6_IRQHandler
-                0x080006ac                SysTick_Handler
-                0x080006ac                PVD_IRQHandler
-                0x080006ac                SDIO_IRQHandler
-                0x080006ac                PendSV_Handler
-                0x080006ac                NMI_Handler
-                0x080006ac                EXTI3_IRQHandler
-                0x080006ac                USB_HP_CAN_TX_IRQHandler
-                0x080006ac                EXTI0_IRQHandler
-                0x080006ac                I2C2_EV_IRQHandler
-                0x080006ac                UsageFault_Handler
-                0x080006ac                ADC1_2_IRQHandler
-                0x080006ac                SPI1_IRQHandler
-                0x080006ac                CAN_SCE_IRQHandler
-                0x080006ac                TAMPER_IRQHandler
-                0x080006ac                TIM8_UP_IRQHandler
-                0x080006ac                DMA2_Channel2_IRQHandler
-                0x080006ac                DMA1_Channel4_IRQHandler
-                0x080006ac                USART3_IRQHandler
-                0x080006ac                RTC_IRQHandler
-                0x080006ac                DMA1_Channel7_IRQHandler
-                0x080006ac                UART5_IRQHandler
-                0x080006ac                ADC3_IRQHandler
-                0x080006ac                TIM4_IRQHandler
-                0x080006ac                CAN_RX1_IRQHandler
-                0x080006ac                DMA2_Channel1_IRQHandler
-                0x080006ac                I2C1_EV_IRQHandler
-                0x080006ac                DMA1_Channel6_IRQHandler
-                0x080006ac                UART4_IRQHandler
-                0x080006ac                TIM3_IRQHandler
-                0x080006ac                RCC_IRQHandler
-                0x080006ac                TIM1_TRG_COM_IRQHandler
-                0x080006ac                DMA1_Channel1_IRQHandler
-                0x080006ac                Default_Handler
-                0x080006ac                EXTI15_10_IRQHandler
-                0x080006ac                TIM7_IRQHandler
-                0x080006ac                TIM5_IRQHandler
-                0x080006ac                EXTI9_5_IRQHandler
-                0x080006ac                SPI2_IRQHandler
-                0x080006ac                USB_LP_CAN_RX0_IRQHandler
-                0x080006ac                MemManage_Handler
-                0x080006ac                SVC_Handler
-                0x080006ac                DMA1_Channel5_IRQHandler
-                0x080006ac                EXTI4_IRQHandler
-                0x080006ac                DMA1_Channel3_IRQHandler
-                0x080006ac                FSMC_IRQHandler
-                0x080006ac                TIM1_UP_IRQHandler
-                0x080006ac                WWDG_IRQHandler
-                0x080006ac                TIM2_IRQHandler
-                0x080006ac                TIM1_BRK_IRQHandler
-                0x080006ac                EXTI1_IRQHandler
-                0x080006ac                RTCAlarm_IRQHandler
-                0x080006ac                DMA2_Channel4_5_IRQHandler
-                0x080006ac                USART2_IRQHandler
-                0x080006ac                I2C2_ER_IRQHandler
-                0x080006ac                DMA1_Channel2_IRQHandler
-                0x080006ac                TIM8_BRK_IRQHandler
-                0x080006ac                FLASH_IRQHandler
-                0x080006ac                BusFault_Handler
-                0x080006ac                USART1_IRQHandler
-                0x080006ac                SPI3_IRQHandler
-                0x080006ac                I2C1_ER_IRQHandler
-                0x080006ac                DMA2_Channel3_IRQHandler
- *fill*         0x080006ae        0x2 
- .text.strlen   0x080006b0       0x5c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
-                0x080006b0                strlen
+                0x080009ac        0x2 startup/startup_stm32.o
+                0x080009ac                EXTI2_IRQHandler
+                0x080009ac                TIM8_TRG_COM_IRQHandler
+                0x080009ac                TIM8_CC_IRQHandler
+                0x080009ac                DebugMon_Handler
+                0x080009ac                TIM1_CC_IRQHandler
+                0x080009ac                HardFault_Handler
+                0x080009ac                TIM6_IRQHandler
+                0x080009ac                SysTick_Handler
+                0x080009ac                PVD_IRQHandler
+                0x080009ac                SDIO_IRQHandler
+                0x080009ac                PendSV_Handler
+                0x080009ac                NMI_Handler
+                0x080009ac                EXTI3_IRQHandler
+                0x080009ac                USB_HP_CAN_TX_IRQHandler
+                0x080009ac                EXTI0_IRQHandler
+                0x080009ac                I2C2_EV_IRQHandler
+                0x080009ac                UsageFault_Handler
+                0x080009ac                ADC1_2_IRQHandler
+                0x080009ac                SPI1_IRQHandler
+                0x080009ac                CAN_SCE_IRQHandler
+                0x080009ac                TAMPER_IRQHandler
+                0x080009ac                TIM8_UP_IRQHandler
+                0x080009ac                DMA2_Channel2_IRQHandler
+                0x080009ac                DMA1_Channel4_IRQHandler
+                0x080009ac                USART3_IRQHandler
+                0x080009ac                RTC_IRQHandler
+                0x080009ac                DMA1_Channel7_IRQHandler
+                0x080009ac                UART5_IRQHandler
+                0x080009ac                ADC3_IRQHandler
+                0x080009ac                TIM4_IRQHandler
+                0x080009ac                CAN_RX1_IRQHandler
+                0x080009ac                DMA2_Channel1_IRQHandler
+                0x080009ac                I2C1_EV_IRQHandler
+                0x080009ac                DMA1_Channel6_IRQHandler
+                0x080009ac                UART4_IRQHandler
+                0x080009ac                TIM3_IRQHandler
+                0x080009ac                RCC_IRQHandler
+                0x080009ac                TIM1_TRG_COM_IRQHandler
+                0x080009ac                DMA1_Channel1_IRQHandler
+                0x080009ac                Default_Handler
+                0x080009ac                EXTI15_10_IRQHandler
+                0x080009ac                TIM7_IRQHandler
+                0x080009ac                TIM5_IRQHandler
+                0x080009ac                EXTI9_5_IRQHandler
+                0x080009ac                SPI2_IRQHandler
+                0x080009ac                USB_LP_CAN_RX0_IRQHandler
+                0x080009ac                MemManage_Handler
+                0x080009ac                SVC_Handler
+                0x080009ac                DMA1_Channel5_IRQHandler
+                0x080009ac                EXTI4_IRQHandler
+                0x080009ac                DMA1_Channel3_IRQHandler
+                0x080009ac                FSMC_IRQHandler
+                0x080009ac                TIM1_UP_IRQHandler
+                0x080009ac                WWDG_IRQHandler
+                0x080009ac                TIM2_IRQHandler
+                0x080009ac                TIM1_BRK_IRQHandler
+                0x080009ac                EXTI1_IRQHandler
+                0x080009ac                RTCAlarm_IRQHandler
+                0x080009ac                DMA2_Channel4_5_IRQHandler
+                0x080009ac                USART2_IRQHandler
+                0x080009ac                I2C2_ER_IRQHandler
+                0x080009ac                DMA1_Channel2_IRQHandler
+                0x080009ac                TIM8_BRK_IRQHandler
+                0x080009ac                FLASH_IRQHandler
+                0x080009ac                BusFault_Handler
+                0x080009ac                USART1_IRQHandler
+                0x080009ac                SPI3_IRQHandler
+                0x080009ac                I2C1_ER_IRQHandler
+                0x080009ac                DMA2_Channel3_IRQHandler
+ *fill*         0x080009ae        0x2 
+ .text.strlen   0x080009b0       0x5c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
+                0x080009b0                strlen
  *(.glue_7)
- .glue_7        0x0800070c        0x0 linker stubs
+ .glue_7        0x08000a0c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800070c        0x0 linker stubs
+ .glue_7t       0x08000a0c        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800070c        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x08000a0c        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x0800070c        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0800070c                _init
- .init          0x08000710        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x08000a0c        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08000a0c                _init
+ .init          0x08000a10        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x08000718        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08000718                _fini
- .fini          0x0800071c        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x08000724                . = ALIGN (0x4)
-                0x08000724                _etext = .
+ .fini          0x08000a18        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08000a18                _fini
+ .fini          0x08000a1c        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x08000a24                . = ALIGN (0x4)
+                0x08000a24                _etext = .
 
-.vfp11_veneer   0x08000724        0x0
- .vfp11_veneer  0x08000724        0x0 linker stubs
+.vfp11_veneer   0x08000a24        0x0
+ .vfp11_veneer  0x08000a24        0x0 linker stubs
 
-.v4_bx          0x08000724        0x0
- .v4_bx         0x08000724        0x0 linker stubs
+.v4_bx          0x08000a24        0x0
+ .v4_bx         0x08000a24        0x0 linker stubs
 
-.iplt           0x08000724        0x0
- .iplt          0x08000724        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x08000a24        0x0
+ .iplt          0x08000a24        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x08000724        0x4
-                0x08000724                . = ALIGN (0x4)
+.rodata         0x08000a24        0x4
+                0x08000a24                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata._global_impure_ptr
-                0x08000724        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-impure.o)
-                0x08000724                _global_impure_ptr
-                0x08000728                . = ALIGN (0x4)
+                0x08000a24        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-impure.o)
+                0x08000a24                _global_impure_ptr
+                0x08000a28                . = ALIGN (0x4)
 
-.rel.dyn        0x08000728        0x0
- .rel.iplt      0x08000728        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x08000a28        0x0
+ .rel.iplt      0x08000a28        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.ARM.extab      0x08000728        0x0
-                0x08000728                . = ALIGN (0x4)
+.ARM.extab      0x08000a28        0x0
+                0x08000a28                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000728                . = ALIGN (0x4)
+                0x08000a28                . = ALIGN (0x4)
 
-.ARM            0x08000728        0x0
-                0x08000728                . = ALIGN (0x4)
-                0x08000728                __exidx_start = .
+.ARM            0x08000a28        0x0
+                0x08000a28                . = ALIGN (0x4)
+                0x08000a28                __exidx_start = .
  *(.ARM.exidx*)
-                0x08000728                __exidx_end = .
-                0x08000728                . = ALIGN (0x4)
+                0x08000a28                __exidx_end = .
+                0x08000a28                . = ALIGN (0x4)
 
-.preinit_array  0x08000728        0x0
-                0x08000728                . = ALIGN (0x4)
-                0x08000728                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08000a28        0x0
+                0x08000a28                . = ALIGN (0x4)
+                0x08000a28                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08000728                PROVIDE (__preinit_array_end = .)
-                0x08000728                . = ALIGN (0x4)
+                0x08000a28                PROVIDE (__preinit_array_end = .)
+                0x08000a28                . = ALIGN (0x4)
 
-.init_array     0x08000728        0x8
-                0x08000728                . = ALIGN (0x4)
-                0x08000728                PROVIDE (__init_array_start = .)
+.init_array     0x08000a28        0x8
+                0x08000a28                . = ALIGN (0x4)
+                0x08000a28                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x08000728        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__call_atexit.o)
+                0x08000a28        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x0800072c        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x08000730                PROVIDE (__init_array_end = .)
-                0x08000730                . = ALIGN (0x4)
+ .init_array    0x08000a2c        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x08000a30                PROVIDE (__init_array_end = .)
+                0x08000a30                . = ALIGN (0x4)
 
-.fini_array     0x08000730        0x4
-                0x08000730                . = ALIGN (0x4)
-                0x08000730                PROVIDE (__fini_array_start = .)
+.fini_array     0x08000a30        0x4
+                0x08000a30                . = ALIGN (0x4)
+                0x08000a30                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08000730        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x08000734                PROVIDE (__fini_array_end = .)
-                0x08000734                . = ALIGN (0x4)
-                0x08000734                _sidata = LOADADDR (.data)
+ .fini_array    0x08000a30        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x08000a34                PROVIDE (__fini_array_end = .)
+                0x08000a34                . = ALIGN (0x4)
+                0x08000a34                _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x44c load address 0x08000734
+.data           0x20000000      0x44c load address 0x08000a34
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -1041,11 +1020,11 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x2000044c                . = ALIGN (0x4)
                 0x2000044c                _edata = .
 
-.igot.plt       0x2000044c        0x0 load address 0x08000b80
+.igot.plt       0x2000044c        0x0 load address 0x08000e80
  .igot.plt      0x2000044c        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 0x2000044c                . = ALIGN (0x4)
 
-.bss            0x2000044c       0x68 load address 0x08000b80
+.bss            0x2000044c       0x68 load address 0x08000e80
                 0x2000044c                _sbss = .
                 0x2000044c                __bss_start__ = _sbss
  *(.bss)
@@ -1070,7 +1049,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x200004b4                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200004b4      0x404 load address 0x08000b80
+                0x200004b4      0x404 load address 0x08000e80
                 0x200004b8                . = ALIGN (0x8)
  *fill*         0x200004b4        0x4 
                 0x200004b8                PROVIDE (end = .)
@@ -1107,98 +1086,123 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
  .ARM.attributes
                 0x00000158       0x2d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__atexit.o)
  .ARM.attributes
-                0x00000185       0x33 drivers/src/stm32f103xx_i2c_driver.o
+                0x00000185       0x33 drivers/src/stm32f103xx_gpio_driver.o
  .ARM.attributes
-                0x000001b8       0x33 src/i2c_master_tx.o
+                0x000001b8       0x33 drivers/src/stm32f103xx_i2c_driver.o
  .ARM.attributes
-                0x000001eb       0x21 startup/startup_stm32.o
+                0x000001eb       0x33 src/i2c_master_tx.o
  .ARM.attributes
-                0x0000020c       0x2d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
+                0x0000021e       0x21 startup/startup_stm32.o
  .ARM.attributes
-                0x00000239       0x1d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0000023f       0x2d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
+ .ARM.attributes
+                0x0000026c       0x1d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(stm32f1x_drivers.elf elf32-littlearm)
 
-.debug_frame    0x00000000      0x550
+.debug_frame    0x00000000      0x660
  .debug_frame   0x00000000       0x2c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-init.o)
  .debug_frame   0x0000002c       0x5c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__call_atexit.o)
  .debug_frame   0x00000088       0x20 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-atexit.o)
  .debug_frame   0x000000a8       0x34 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-fini.o)
  .debug_frame   0x000000dc       0xb0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-lock.o)
  .debug_frame   0x0000018c       0x34 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-__atexit.o)
- .debug_frame   0x000001c0      0x250 drivers/src/stm32f103xx_i2c_driver.o
- .debug_frame   0x00000410      0x120 src/i2c_master_tx.o
- .debug_frame   0x00000530       0x20 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
+ .debug_frame   0x000001c0      0x150 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_frame   0x00000310      0x250 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_frame   0x00000560       0xe0 src/i2c_master_tx.o
+ .debug_frame   0x00000640       0x20 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-strlen-stub.o)
 
-.debug_info     0x00000000     0x129b
- .debug_info    0x00000000      0x5ff drivers/src/stm32f103xx_i2c_driver.o
- .debug_info    0x000005ff      0xc7a src/i2c_master_tx.o
- .debug_info    0x00001279       0x22 startup/startup_stm32.o
+.debug_info     0x00000000     0x1577
+ .debug_info    0x00000000      0x3b0 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_info    0x000003b0      0x5f0 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_info    0x000009a0      0xbb5 src/i2c_master_tx.o
+ .debug_info    0x00001555       0x22 startup/startup_stm32.o
 
-.debug_abbrev   0x00000000      0x40a
- .debug_abbrev  0x00000000      0x1a2 drivers/src/stm32f103xx_i2c_driver.o
- .debug_abbrev  0x000001a2      0x256 src/i2c_master_tx.o
- .debug_abbrev  0x000003f8       0x12 startup/startup_stm32.o
+.debug_abbrev   0x00000000      0x4dc
+ .debug_abbrev  0x00000000       0xe1 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_abbrev  0x000000e1      0x193 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_abbrev  0x00000274      0x256 src/i2c_master_tx.o
+ .debug_abbrev  0x000004ca       0x12 startup/startup_stm32.o
 
-.debug_aranges  0x00000000      0x110
+.debug_aranges  0x00000000      0x158
  .debug_aranges
-                0x00000000       0x90 drivers/src/stm32f103xx_i2c_driver.o
+                0x00000000       0x58 drivers/src/stm32f103xx_gpio_driver.o
  .debug_aranges
-                0x00000090       0x58 src/i2c_master_tx.o
+                0x00000058       0x90 drivers/src/stm32f103xx_i2c_driver.o
  .debug_aranges
-                0x000000e8       0x28 startup/startup_stm32.o
+                0x000000e8       0x48 src/i2c_master_tx.o
+ .debug_aranges
+                0x00000130       0x28 startup/startup_stm32.o
 
-.debug_ranges   0x00000000       0xe8
- .debug_ranges  0x00000000       0x80 drivers/src/stm32f103xx_i2c_driver.o
- .debug_ranges  0x00000080       0x48 src/i2c_master_tx.o
- .debug_ranges  0x000000c8       0x20 startup/startup_stm32.o
+.debug_ranges   0x00000000      0x120
+ .debug_ranges  0x00000000       0x48 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_ranges  0x00000048       0x80 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_ranges  0x000000c8       0x38 src/i2c_master_tx.o
+ .debug_ranges  0x00000100       0x20 startup/startup_stm32.o
 
-.debug_macro    0x00000000     0x10b7
- .debug_macro   0x00000000       0xae drivers/src/stm32f103xx_i2c_driver.o
- .debug_macro   0x000000ae       0xc4 drivers/src/stm32f103xx_i2c_driver.o
- .debug_macro   0x00000172       0xd0 drivers/src/stm32f103xx_i2c_driver.o
- .debug_macro   0x00000242      0x236 src/i2c_master_tx.o
- .debug_macro   0x00000478       0x5e src/i2c_master_tx.o
- .debug_macro   0x000004d6       0x18 src/i2c_master_tx.o
- .debug_macro   0x000004ee       0x35 src/i2c_master_tx.o
- .debug_macro   0x00000523       0x34 src/i2c_master_tx.o
- .debug_macro   0x00000557       0x16 src/i2c_master_tx.o
- .debug_macro   0x0000056d       0x97 src/i2c_master_tx.o
- .debug_macro   0x00000604      0x330 src/i2c_master_tx.o
- .debug_macro   0x00000934       0xfd src/i2c_master_tx.o
- .debug_macro   0x00000a31       0x10 src/i2c_master_tx.o
- .debug_macro   0x00000a41       0x58 src/i2c_master_tx.o
- .debug_macro   0x00000a99       0x1f src/i2c_master_tx.o
- .debug_macro   0x00000ab8       0x43 src/i2c_master_tx.o
- .debug_macro   0x00000afb       0x20 src/i2c_master_tx.o
- .debug_macro   0x00000b1b      0x18e src/i2c_master_tx.o
- .debug_macro   0x00000ca9       0x10 src/i2c_master_tx.o
- .debug_macro   0x00000cb9       0x1c src/i2c_master_tx.o
- .debug_macro   0x00000cd5       0x52 src/i2c_master_tx.o
- .debug_macro   0x00000d27       0x40 src/i2c_master_tx.o
- .debug_macro   0x00000d67       0x10 src/i2c_master_tx.o
- .debug_macro   0x00000d77       0x40 src/i2c_master_tx.o
- .debug_macro   0x00000db7       0xd7 src/i2c_master_tx.o
- .debug_macro   0x00000e8e       0x1c src/i2c_master_tx.o
- .debug_macro   0x00000eaa       0x3d src/i2c_master_tx.o
- .debug_macro   0x00000ee7       0x16 src/i2c_master_tx.o
- .debug_macro   0x00000efd      0x16f src/i2c_master_tx.o
- .debug_macro   0x0000106c       0x16 src/i2c_master_tx.o
- .debug_macro   0x00001082       0x35 src/i2c_master_tx.o
+.debug_macro    0x00000000     0x279b
+ .debug_macro   0x00000000       0xae drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x000000ae      0xa60 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000b0e       0x22 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000b30       0x8e drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000bbe       0x51 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000c0f       0xef drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000cfe       0x6a drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000d68      0x1df drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00000f47      0x454 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x0000139b       0xbe drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00001459       0xd6 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x0000152f      0x109 drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x00001638       0xac drivers/src/stm32f103xx_gpio_driver.o
+ .debug_macro   0x000016e4       0xae drivers/src/stm32f103xx_i2c_driver.o
+ .debug_macro   0x00001792       0xc4 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_macro   0x00001856       0xd0 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_macro   0x00001926      0x236 src/i2c_master_tx.o
+ .debug_macro   0x00001b5c       0x5e src/i2c_master_tx.o
+ .debug_macro   0x00001bba       0x18 src/i2c_master_tx.o
+ .debug_macro   0x00001bd2       0x35 src/i2c_master_tx.o
+ .debug_macro   0x00001c07       0x34 src/i2c_master_tx.o
+ .debug_macro   0x00001c3b       0x16 src/i2c_master_tx.o
+ .debug_macro   0x00001c51       0x97 src/i2c_master_tx.o
+ .debug_macro   0x00001ce8      0x330 src/i2c_master_tx.o
+ .debug_macro   0x00002018       0xfd src/i2c_master_tx.o
+ .debug_macro   0x00002115       0x10 src/i2c_master_tx.o
+ .debug_macro   0x00002125       0x58 src/i2c_master_tx.o
+ .debug_macro   0x0000217d       0x1f src/i2c_master_tx.o
+ .debug_macro   0x0000219c       0x43 src/i2c_master_tx.o
+ .debug_macro   0x000021df       0x20 src/i2c_master_tx.o
+ .debug_macro   0x000021ff      0x18e src/i2c_master_tx.o
+ .debug_macro   0x0000238d       0x10 src/i2c_master_tx.o
+ .debug_macro   0x0000239d       0x1c src/i2c_master_tx.o
+ .debug_macro   0x000023b9       0x52 src/i2c_master_tx.o
+ .debug_macro   0x0000240b       0x40 src/i2c_master_tx.o
+ .debug_macro   0x0000244b       0x10 src/i2c_master_tx.o
+ .debug_macro   0x0000245b       0x40 src/i2c_master_tx.o
+ .debug_macro   0x0000249b       0xd7 src/i2c_master_tx.o
+ .debug_macro   0x00002572       0x1c src/i2c_master_tx.o
+ .debug_macro   0x0000258e       0x3d src/i2c_master_tx.o
+ .debug_macro   0x000025cb       0x16 src/i2c_master_tx.o
+ .debug_macro   0x000025e1      0x16f src/i2c_master_tx.o
+ .debug_macro   0x00002750       0x16 src/i2c_master_tx.o
+ .debug_macro   0x00002766       0x35 src/i2c_master_tx.o
 
-.debug_line     0x00000000      0xbaa
- .debug_line    0x00000000      0x575 drivers/src/stm32f103xx_i2c_driver.o
- .debug_line    0x00000575      0x5b9 src/i2c_master_tx.o
- .debug_line    0x00000b2e       0x7c startup/startup_stm32.o
+.debug_line     0x00000000      0xfc8
+ .debug_line    0x00000000      0x45d drivers/src/stm32f103xx_gpio_driver.o
+ .debug_line    0x0000045d      0x567 drivers/src/stm32f103xx_i2c_driver.o
+ .debug_line    0x000009c4      0x588 src/i2c_master_tx.o
+ .debug_line    0x00000f4c       0x7c startup/startup_stm32.o
 
-.debug_str      0x00000000     0x991b
- .debug_str     0x00000000     0x57a5 drivers/src/stm32f103xx_i2c_driver.o
+.debug_str      0x00000000     0x99d9
+ .debug_str     0x00000000     0x5662 drivers/src/stm32f103xx_gpio_driver.o
+                               0x57fb (size before relaxing)
+ .debug_str     0x00005662      0x275 drivers/src/stm32f103xx_i2c_driver.o
                                0x5932 (size before relaxing)
- .debug_str     0x000057a5     0x414d src/i2c_master_tx.o
-                               0x9976 (size before relaxing)
- .debug_str     0x000098f2       0x29 startup/startup_stm32.o
+ .debug_str     0x000058d7     0x40d9 src/i2c_master_tx.o
+                               0x9912 (size before relaxing)
+ .debug_str     0x000099b0       0x29 startup/startup_stm32.o
                                  0x73 (size before relaxing)
 
 .comment        0x00000000       0x7f
- .comment       0x00000000       0x7f drivers/src/stm32f103xx_i2c_driver.o
+ .comment       0x00000000       0x7f drivers/src/stm32f103xx_gpio_driver.o
                                  0x80 (size before relaxing)
+ .comment       0x0000007f       0x80 drivers/src/stm32f103xx_i2c_driver.o
  .comment       0x0000007f       0x80 src/i2c_master_tx.o
